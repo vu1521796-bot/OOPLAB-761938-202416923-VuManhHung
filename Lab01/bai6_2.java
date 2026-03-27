@@ -1,6 +1,6 @@
-package week1;
+
 import java.util.Scanner;
-public class inputfromkeyboard {
+public class bai6_2 {
 	public static void main(String[] args) {
 		
 	Scanner keyboard =new Scanner(System.in);

@@ -1,4 +1,4 @@
-package startriangle;
+
 import java.util.Scanner;
 public class bai6_3 {
 	public static void main(String[] args) {

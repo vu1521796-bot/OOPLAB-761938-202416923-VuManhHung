@@ -1,4 +1,4 @@
-package displayyear;
+
 import java.util.Scanner;
 public class bai6_4 {
 	public static void main(String[] args) {
