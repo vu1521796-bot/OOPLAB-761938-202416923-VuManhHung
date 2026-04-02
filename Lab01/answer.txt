@@ -1,2 +1,3 @@
 6.1
-_
+_Nếu đổi thành chọn Cancel sẽ thoát chương trình hoặc sữ trả về JOptionPane.CANCEL_OPTION
+_Để thay bằng lựa chọn "I don't" hoặc "I do" thì làm như file 6.1.java.
