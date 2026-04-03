@@ -86,7 +86,7 @@ public class bai2_2_6 {
                 double b4 = choose.nextDouble();
                 System.out.println("Nhap he so c2: ");
                 double c4 = choose.nextDouble();
-                giaihePTbac1(a3, b3, a4, b4, c3, c4);
+                giaihePTbac1(a3, b3, a4, b4, c3, c41);
                 break;
             default:
                 System.out.println("Lua chon khong hop le");
