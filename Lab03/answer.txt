@@ -1,0 +1,33 @@
+Câu 14:
+_Có hai lớp đóng vai trò là Aggregate (Tập hợp):
+
+    + Cart: Tập hợp các đối tượng Media mà người dùng chọn mua.
+	+ Store: Tập hợp các đối tượng Media có sẵn trong cửa hàng.
+
+Câu 15
+_Nếu không kiểm tra trước mà trực tiếp ép kiểu (ép obj sang kiểu Media), chương trình sẽ xảy ra lỗi ClassCastException và bị sập ngay lập tức (Runtime Error).
+_Chính vì vậy, trong lập trình Java, chúng ta luôn phải dùng toán tử instanceof để "hỏi" xem đối tượng đó có đúng là kiểu mình cần không trước khi thực hiện ép kiểu. Nếu kết quả là false, hàm equals() sẽ trả về false một cách an toàn thay vì làm hỏng chương trình.
+
+Câu 17
+1. Lớp nào nên thực thi (implement) Comparable interface?
+
+_Lớp Media nên thực thi interface này.
+Vì Cart chứa một danh sách các đối tượng kiểu Media, nên để có thể gọi hàm Collections.sort(itemsOrdered), các phần tử bên trong danh sách đó (tức là lớp cha Media) phải có khả năng tự so sánh với nhau.
+
+2. Triển khai phương thức compareTo() như thế nào?
+
+_Trong lớp Media,sẽ ghi đè phương thức compareTo(). Tuy nhiên, vì Comparable chỉ cho phép một quy tắc sắp xếp mặc định (Natural Ordering), bạn phải chọn một trong hai quy tắc mà đề bài yêu cầu.
+3. Có thể có 2 quy tắc sắp xếp nếu dùng Comparable không?
+_Không vì:
+
+  +Interface Comparable chỉ định nghĩa một phương thức duy nhất là compareTo(). Điều này xác định "thứ tự tự nhiên" (natural order) của đối tượng.
+
+  +Không thể có hai hàm compareTo() khác nhau trong cùng một lớp. Đây chính là hạn chế lớn nhất của Comparable so với Comparator. Nếu muốn đổi kiểu sắp xếp,sẽ phải sửa code bên trong hàm compareTo mỗi lần chạy, điều này cực kỳ bất tiện.
+
+4. Xử lý khi DVD có quy tắc sắp xếp riêng (Title -> Length -> Cost)
+
+_Nếu muốn DVD có cách sắp xếp đặc thù hơn các loại Media khác,cần làm các bước sau:
+
+   + Bước 1: Ghi đè (Override) lại hàm compareTo() ngay bên trong lớp DigitalVideoDisc.
+
+    +Bước 2: Trong hàm này, bạn thực hiện so sánh theo thứ tự ưu tiên: title, sau đó đến length (giảm dần), và cuối cùng là cost.
